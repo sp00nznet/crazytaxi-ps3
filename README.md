@@ -16,19 +16,20 @@ Crazy Taxi has two other recompilations here: the Dreamcast SH-4 original
 |---|---|
 | ![Logos](docs/media/logos.png) | ![Title screen](docs/media/title.png) |
 | ![Attract demo](docs/media/attract_1.png) | ![Attract demo](docs/media/attract_2.png) |
+| ![Attract demo](docs/media/attract_3.png) | ![Attract demo](docs/media/attract_4.png) |
 
 ## Status
 
 **Alpha.** Boots through the loading screen, ESRB/Sega/CRI logos and the
-"Press START" title into the in-engine attract demo, at about 25 fps.
-Nothing past the title has been tried yet.
+"Press START" title into the in-engine attract demo, which renders the city
+correctly and without flicker. Nothing past the title has been tried yet.
 
 | Area | State |
 |---|---|
 | PKG extract, EBOOT decrypt | Works (free-license EBOOT; see [docs/extracting.md](docs/extracting.md)) |
 | PPU lift | 8,655 functions, 197 imports across 16 libraries, builds first time |
 | SPU | 2 embedded images lifted; the CRI task (image 1) dispatches through SPURS |
-| Graphics | Logos, title and 2D render. In 3D, large parts of the city draw black |
+| Graphics | Logos, title, attract demo and high-score table render correctly, no black frames |
 | Audio | CRI ADX sound bank loads; output not checked |
 | Input | Not tried past the title screen |
 | Menus, gameplay | Not reached |
@@ -49,7 +50,12 @@ Prerequisites (Windows 11):
 - Git Bash (for `tools/relift.sh`)
 - A checkout of [ps3recomp](https://github.com/sp00nznet/ps3recomp) with
   `build-gate/ps3recomp_runtime.lib` built (default path `G:/recomp/ps3`; set
-  `PS3RECOMP_DIR` for CMake and `PS3RECOMP` for `relift.sh` if yours is elsewhere)
+  `PS3RECOMP_DIR` and `PS3RECOMP_RUNTIME_LIB` for CMake and `PS3RECOMP` for
+  `relift.sh` if yours is elsewhere). Until they are merged, the checkout needs
+  two branches on top of `master`: `fix/fp-flow-control` (without it the city
+  draws black) and `fix/jobchain-join-flip-marker-securefile`,
+  [#185](https://github.com/sp00nznet/ps3recomp/pull/185) (without it about one
+  frame in six flashes black)
 - A scetool-format key file holding the NPDRM `appldr` keys and `NP_klic_free` / `NP_klic_key`
 
 Steps:

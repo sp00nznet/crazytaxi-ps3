@@ -2,11 +2,12 @@
 
 ## Next
 
-- **Black 3D geometry in the attract demo.** Log the primitive type of the
-  `prim` drops and check whether they account for the missing city. If they
-  don't, dump one black draw's shaders and inputs.
+- **Get the two ps3recomp fixes merged.** `fix/fp-flow-control` and #185, so
+  this port builds against plain `master`.
 - **Past the title.** START into the main menu, then Arcade into a fare.
 - **Audio out.** Check that CRI ADX output reaches `cellAudio`.
+- **`prim` drops.** 1.5% of draw groups use a primitive the live engine doesn't
+  expand. Log which one and whether anything on screen is missing.
 
 ## Later
 
