@@ -15,7 +15,7 @@ uses [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 
-- The 3D city no longer draws black (ps3recomp `fix/fp-flow-control`: fragment
+- The 3D city no longer draws black (ps3recomp #187: fragment
   program if/else and loops are decompiled instead of skipped).
 - No more single black frames between presents (ps3recomp #185: flips are
   queued in the command FIFO).

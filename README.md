@@ -52,7 +52,7 @@ Prerequisites (Windows 11):
   `build-gate/ps3recomp_runtime.lib` built (default path `G:/recomp/ps3`; set
   `PS3RECOMP_DIR` and `PS3RECOMP_RUNTIME_LIB` for CMake and `PS3RECOMP` for
   `relift.sh` if yours is elsewhere). Until they are merged, the checkout needs
-  two branches on top of `master`: `fix/fp-flow-control` (without it the city
+  two branches on top of `master`: `fix/fp-flow-control`, [#187](https://github.com/sp00nznet/ps3recomp/pull/187) (without it the city
   draws black) and `fix/jobchain-join-flip-marker-securefile`,
   [#185](https://github.com/sp00nznet/ps3recomp/pull/185) (without it about one
   frame in six flashes black)

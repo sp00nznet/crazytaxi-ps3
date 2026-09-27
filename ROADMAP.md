@@ -2,7 +2,7 @@
 
 ## Next
 
-- **Get the two ps3recomp fixes merged.** `fix/fp-flow-control` and #185, so
+- **Get the two ps3recomp fixes merged.** [#187](https://github.com/sp00nznet/ps3recomp/pull/187) and [#185](https://github.com/sp00nznet/ps3recomp/pull/185), so
   this port builds against plain `master`.
 - **Past the title.** START into the main menu, then Arcade into a fare.
 - **Audio out.** Check that CRI ADX output reaches `cellAudio`.

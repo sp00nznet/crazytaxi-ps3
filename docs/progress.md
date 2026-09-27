@@ -11,7 +11,7 @@ unless noted.
 
 | Symptom | Cause |
 |---|---|
-| Large parts of the 3D city drew black | The city's pixel shader is an uber-shader with if/else blocks, and the FP decompiler skipped every flow-control instruction. Both sides of each if/else ran, and the later one overwrote the lit colour with `COLOR0`, which the city's vertex program (position + UV only) never writes. IFE/LOOP/REP/BRK and LIF are now decompiled (ps3recomp `fix/fp-flow-control`) |
+| Large parts of the 3D city drew black | The city's pixel shader is an uber-shader with if/else blocks, and the FP decompiler skipped every flow-control instruction. Both sides of each if/else ran, and the later one overwrote the lit colour with `COLOR0`, which the city's vertex program (position + UV only) never writes. IFE/LOOP/REP/BRK and LIF are now decompiled (ps3recomp [#187](https://github.com/sp00nznet/ps3recomp/pull/187)) |
 | About one frame in six presented black | `_cellGcmSetFlipCommand` flipped at call time, before the frame's final composite draw had been drained: 9.9% of presents showed a display buffer cleared after its last draw. PR [#185](https://github.com/sp00nznet/ps3recomp/pull/185) (written for Simpsons) queues the flip in the FIFO. With it, 0 of 1,280 presents and 0 of 230 dumped frames were black |
 
 How it was found, in case the next black surface looks similar:
