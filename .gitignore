@@ -1,0 +1,29 @@
+# ── Game data: bring your own (never committed) ─────────────────────────
+*.rar
+*.r[0-9][0-9]
+*.pkg
+*.PKG
+pkg/
+extracted/
+game/
+vfs/
+gamedata/
+*.elf
+*.BIN
+*.edat
+*.bin
+
+# ── Recompiler output: regenerate with tools/relift.sh ──────────────────
+imports.json
+analysis/
+src/recomp/
+src/gen/
+src/spu_gen/
+spu_miss/
+
+# ── Build and local scratch ─────────────────────────────────────────────
+build*/
+*.map
+*.log
+scratch/
+*.ppm
